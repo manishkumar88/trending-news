@@ -1,0 +1,10 @@
+// import { createStore } from 'redux';
+// import { trendingNews } from './index';
+// import { newsList } from './news-list';
+
+// describe('Root reducer - trendingNews - smoke tests', () => {
+//   let store = createStore(trendingNews);
+//   it('should match the default state from child reducers', () => {
+//     expect(store.getState().newsList).toEqual(newsList(undefined, {}));
+//   });
+// });
