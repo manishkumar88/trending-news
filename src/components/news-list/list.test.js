@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NewsList from './list';
+import { NewsList } from './list';
 
 const setUp = (props = {}) => {
   const comp = shallow(<NewsList {...props} />);
