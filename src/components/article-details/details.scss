@@ -1,3 +1,11 @@
-iframe {
-    display: block;
+.pane__message {
+  padding: 0 100px;
+}
+.pane__data {
+  height: 100%;
+  width: 100%;
+  > iframe {
+    height: 100%;
+    width: 100%;
+  }
 }

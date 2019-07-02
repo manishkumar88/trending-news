@@ -28,6 +28,9 @@ export const NewsItem = ({
           </span>
         </div>
       </div>
+      <i className="material-icons" style={{ color: '#666' }}>
+        chevron_right
+      </i>
     </div>
   );
 };

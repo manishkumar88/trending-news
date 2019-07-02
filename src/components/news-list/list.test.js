@@ -1,23 +1,27 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
-// import configureStore from 'redux-mock-store';
-// import thunk from 'redux-thunk';
 import NewsList from './list';
-import { store } from '../../redux/store';
-// import { NewsItem } from '../news-item/item';
 
-// const middlewares = [thunk];
-// const mockStore = configureStore(middlewares);
+const setUp = (props = {}) => {
+  const comp = shallow(<NewsList {...props} />);
+  return comp;
+};
 
 describe('<NewsList />', () => {
-  it('renders', () => {
-    const comp = shallow(
-      <Provider store={store}>
-        <NewsList />
-      </Provider>
-    );
-    // console.log(comp.debug());
-    // expect(comp.find(NewsItem).length).toBe(1);
+  it('renders loading state', () => {
+    const comp = setUp({
+      isLoading: true
+    });
+    expect(comp.find('.list').length).toBe(1);
+    expect(comp.find('h1').length).toBe(1);
+  });
+
+  it('renders <NewsItem />s from reults', () => {
+    const comp = setUp({
+      isLoading: false,
+      list: { results: [{ id: 1 }, { id: 2 }, { id: 3 }] }
+    });
+    expect(comp.find('h1').length).toBe(0);
+    expect(comp.find('NewsItem').length).toBe(3);
   });
 });
